@@ -1,5 +1,8 @@
+import AuthController from '../controllers/auth_controller';
 import UserController from '../controllers/user_controller';
 import RoleController from '../controllers/role_controller';
+import CategoryController from '../controllers/category_controller';
+
 
 import express from 'express';
 import multer from 'multer';
@@ -40,6 +43,9 @@ const UserUpload = multer({storage: UserStorage, fileFilter: function (req, file
 }});
 
 
+router.route('/login').post(AuthController.login)
+
+//USER Router
 router.route('/user')
 	.get(UserController.listUser)
 	.post(UserUpload.single('photo'),UserController.createUser)
@@ -48,12 +54,22 @@ router.route('/user')
 router.route('/user/:id')
 	.delete(UserController.deleteUser)
 
-router.route('/role')
+//ROLE Router
+  router.route('/role')
   .get(RoleController.listRole)
   .post(RoleController.createRole)
   .put(RoleController.updateRole)
 
 router.route('/role/:id')
   .delete(RoleController.deleteRole)
+
+//Category Router
+router.route('/category')
+  .get(CategoryController.getCategory)
+  .post(CategoryController.postCategory)
+  .put(CategoryController.updateCategory)
+
+router.route('/category/:id')
+  .delete(CategoryController.deleteCategory)
 
 export default router;

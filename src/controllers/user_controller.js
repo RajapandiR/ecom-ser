@@ -9,7 +9,7 @@ class UserController {
             const options = {
                 page: 1,
                 limit: 10,
-                select: ["userName", "fullName", "email"]
+                select: ["username", "fullname", "email"]
                 
             };
             // where = req.query.userName;

@@ -3,14 +3,14 @@ class UserSchema {
 		return {
 			type: "object",
 			properties: {
-				userName: { type: 'string'},
-				fullName: { type: 'string'},
+				username: { type: 'string'},
+				fullname: { type: 'string'},
 				email: { type: 'string'},
 				photo: { type: 'string'},
 				password: { type: 'string'},
 				role: { type: 'string'},
 			},
-			required: ['userName', 'email','role']
+			required: ['username', 'email','role']
 		};
 
 	}
@@ -19,8 +19,8 @@ class UserSchema {
 			type: "object",
 			properties: {
 				_id: { type: 'string'},
-				userName: { type: 'string'},
-				fullName: { type: 'string'},
+				username: { type: 'string'},
+				fullname: { type: 'string'},
 				email: { type: 'string'},
 				photo: { type: 'string'},
 				password: { type: 'string'},
